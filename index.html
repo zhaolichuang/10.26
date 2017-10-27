@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/stylesheets/style.css"/>
+    <title></title>
+</head>
+<body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script>
+    $.ajax({
+        url:'http://localhost:3000/',
+        type:'POST',
+        success:function(data){
+            for(var i in data){
+                $('body').append('<ul>'+'<li>'+'<p>'+data[i].id+'</p>'+'<p>'+data[i].name+'</p>'+'<p>'+data[i].age+'</p>'+'</li>'+'</ul>')
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
